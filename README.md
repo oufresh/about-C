@@ -1,2 +1,2 @@
-# about-C-and-C-
+# about-C-and-C++
 C and C++ Samples
