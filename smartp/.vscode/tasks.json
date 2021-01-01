@@ -1,0 +1,47 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "cppbuild",
+			"label": "C/C++ build",
+			"command": "cl.exe",
+			"args": [
+				"/Zi",
+				"/EHsc",
+				"/Fo:",
+				"${workspaceFolder}\\obj\\",
+				"/Fe:",
+				"${workspaceFolder}\\bin\\smartp.exe",
+				"${workspaceFolder}\\src\\heapCorruption.cpp",
+				"${workspaceFolder}\\src\\smartp.cpp",
+				"${workspaceFolder}\\src\\user.cpp",
+				"${workspaceFolder}\\src\\main.cpp"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"problemMatcher": [
+				"$msCompile"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"detail": "compiler: cl.exe"
+		},
+		{
+			"type": "shell",
+			"label": "clean",
+			"command": [
+				"Remove-Item ${workspaceFolder}\\obj\\*;",
+				"Remove-Item ${workspaceFolder}\\bin\\*;",
+				"Remove-Item ${workspaceFolder}\\*.pdb"
+			],
+			"args": [],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"problemMatcher": []
+		}
+	]
+}
