@@ -6,6 +6,7 @@
 #include "move.h"
 #include "heapCorruption.h"
 #include "smartp.h"
+#include "traits.h"
 
 ArrayWrapper arr = ArrayWrapper(10);
 
@@ -72,6 +73,7 @@ int printMenu()
     std::cout << "3 - Test move constructor\n";
     std::cout << "4 - Test heap corruption with raw pointers\n";
     std::cout << "5 - Test smart pointers\n";
+    std::cout << "6 - Test traits\n";
     std::cout << "0 - Quit\n";
     std::cout << "Selection: ";
     std::cin >> choice;
@@ -108,6 +110,10 @@ int main(int argc, char **argv)
         case 5:
             std::cout << "---- Test smart pointers ----" << std::endl;
             smartpMenu();
+            break;
+            case 6:
+            std::cout << "---- Test traits ----" << std::endl;
+            traitspMenu();
             break;
         default:
             break;

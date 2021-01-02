@@ -15,6 +15,7 @@
 				"${workspaceFolder}\\src\\heapCorruption.cpp",
 				"${workspaceFolder}\\src\\smartp.cpp",
 				"${workspaceFolder}\\src\\user.cpp",
+				"${workspaceFolder}\\src\\traits.cpp",
 				"${workspaceFolder}\\src\\main.cpp"
 			],
 			"options": {
