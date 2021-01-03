@@ -49,6 +49,19 @@ T findMax(std::vector<T> &data,
     return largest;
 }
 
+
+template <class T>
+T findMax(std::shared_ptr<std::vector<T>> data,
+          const size_t numItems)
+{
+    // Obtain the minimum value for type T
+    T largest =
+        std::numeric_limits<T>::min();
+    for (unsigned int i = 0; i < numItems; ++i)
+        if ((*data)[i] > largest)
+            largest = (*data)[i];
+    return largest;
+}
 void testMax()
 {
     std::vector<int> data(50);
@@ -60,6 +73,16 @@ void testMax()
     std::cout << "Found max "  << max << std::endl;
 }
 
+void testMaxPtr()
+{
+    std::shared_ptr<std::vector<int>> ptr = std::make_shared<std::vector<int>>(50);
+      // assign some values:
+    for (unsigned i=0; i<50; i++) (*ptr)[i]=i;
+
+    int max = findMax(ptr, 50);
+
+    std::cout << "Found max "  << max << std::endl;
+}
 int printTraitsMenu()
 {
     int choice;
@@ -68,6 +91,7 @@ int printTraitsMenu()
     std::cout << "Please make your selection\n";
     std::cout << "1 - Test numeric limits traits\n";
     std::cout << "2 - Test find max traits\n";
+    std::cout << "3 - Test find max traits with shared_ptr\n";
     std::cout << "0 - Bacck to main menu\n";
     std::cout << "Selection: ";
     std::cin >> choice;
@@ -90,8 +114,12 @@ void traitspMenu()
             numericLimits();
             break;
             case 2:
-            std::cout << "---- Test find maxtraits ----\n";
+            std::cout << "---- Test find max traits ----\n";
             testMax();
+            break;
+            case 3:
+            std::cout << "---- Test find max traits with shared_ptr----\n";
+            testMaxPtr();
             break;
         default:
             break;
