@@ -16,6 +16,7 @@
 				"${workspaceFolder}\\src\\smartp.cpp",
 				"${workspaceFolder}\\src\\user.cpp",
 				"${workspaceFolder}\\src\\traits.cpp",
+				"${workspaceFolder}\\src\\thread_gang.cpp",
 				"${workspaceFolder}\\src\\main.cpp"
 			],
 			"options": {

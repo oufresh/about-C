@@ -18,6 +18,7 @@
 #include <random>
 
 #include "user.h"
+#include "thread_gang.h"
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -142,6 +143,7 @@ void testUserClass()
   std::cout << "Salary is " << user.getSalary() << std::endl;
 }
 
+
 int printSmartPMenu()
 {
   int choice;
@@ -151,7 +153,8 @@ int printSmartPMenu()
   std::cout << "1 - Test unique_ptr\n";
   std::cout << "2 - Test User class with internal unique_ptr\n";
   std::cout << "3 - Test Use heap resource with unique_ptr and shared_ptr with simple api\n";
-  std::cout << "0 - Bacck to main menu\n";
+  std::cout << "4 - Test shared_ptr with threads\n";
+  std::cout << "0 - Back to main menu\n";
   std::cout << "Selection: ";
   std::cin >> choice;
 
@@ -179,6 +182,10 @@ void smartpMenu()
     case 3:
       std::cout << "---- Test unique_ptr  transfer ownership----\n";
       testOwnershipTransfer();
+      break;
+    case 4:
+      std::cout << "---- Test shared_ptr  eth threads----\n";
+      thread_gang_test();
       break;
     default:
       break;
